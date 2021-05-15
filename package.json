@@ -1,0 +1,20 @@
+{
+  "name": "js-cardio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachharrison/js-cardio.git"
+  },
+  "keywords": [],
+  "author": "Zach Harrison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachharrison/js-cardio/issues"
+  },
+  "homepage": "https://github.com/zachharrison/js-cardio#readme"
+}
