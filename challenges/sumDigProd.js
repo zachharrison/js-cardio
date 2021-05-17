@@ -19,6 +19,7 @@
 
 const sumDigProd = (...numbers) => {
   if (numbers.length === 1 && numbers[0] < 10) return numbers[0];
+
   const splitAndMultiply = (number) => {
     const arr = [];
     number = number.toString();
