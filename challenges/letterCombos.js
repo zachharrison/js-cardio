@@ -13,32 +13,30 @@
 */
 
 const letterCombos = (digitString) => {
-  // const result = [];
-  // const digitArr = [];
-  // const digits = {
-  //   2: ['a', 'b', 'c'],
-  //   3: ['d', 'e', 'f'],
-  //   4: ['g', 'h', 'i'],
-  //   5: ['j', 'k', 'l'],
-  //   6: ['m', 'n', 'o'],
-  //   7: ['p', 'q', 'r', 's'],
-  //   8: ['t', 'u', 'v'],
-  //   9: ['w', 'x', 'y', 'z'],
-  // };
-  // for (const num of digitString) {
-  //   digitArr.push(num);
-  // }
-  // const result = digitArr.reduce((acc, cur, index) => {
-  //   return acc.concat(digits[cur][index]);
-  // }, []);
-  // for(let i = 0; i < digitArr.length; i++) {
-  //   for(let j = i + 1; j < digits[digitArr[i]].length; i++){
-  //   }
-  // }
-  // const test = digitArr.map((digit, index, arr) => {
-  //   return `${digits[digit][index]} ${digits[digit][index + 1]}`;
-  // });
-  // return result;
+  if (digitString === '') return [];
+  const digits = {
+    2: ['a', 'b', 'c'],
+    3: ['d', 'e', 'f'],
+    4: ['g', 'h', 'i'],
+    5: ['j', 'k', 'l'],
+    6: ['m', 'n', 'o'],
+    7: ['p', 'q', 'r', 's'],
+    8: ['t', 'u', 'v'],
+    9: ['w', 'x', 'y', 'z'],
+  };
+
+  if (digitString.length === 1) return digits[digitString];
+
+  const combine = (cur, n) => {
+    if (cur.length === digitString.length) {
+      return cur;
+    }
+
+    return digits[digitString[n]].flatMap((letter) =>
+      combine(cur + letter, n + 1)
+    );
+  };
+  return combine('', 0);
 };
 
 module.exports = letterCombos;
